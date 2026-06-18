@@ -29,7 +29,7 @@ def create_collection():
             COLLECTION_NAME,
             vectors_config=
             VectorParams(
-                size=1024,
+                size=384,
                 distance=Distance.COSINE
             ),
         )
