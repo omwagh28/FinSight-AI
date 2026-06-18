@@ -36,10 +36,17 @@ const risks = [
 export default function RiskCategories() {
   return (
     <section className="section">
-      <div className="container-xl">
+      <div 
+        className="
+          relative
+          z-10
+          max-w-[1100px]
+          mx-auto
+          px-8
+        ">
         <div className="section-divider" />
 
-        <div className="flex items-center justify-between mb-10">
+        <div className="flex items-center justify-between mb-8">
           <span className="label-wide">
             RISK FRAMEWORK
           </span>
@@ -49,13 +56,13 @@ export default function RiskCategories() {
           </span>
         </div>
 
-        <div className="max-w-5xl mb-20">
+        <div className="max-w-4xl mb-16">
           <h2
             className="
               display
-              text-[clamp(3rem,5vw,5.5rem)]
+              text-[clamp(2.6rem,4.5vw,4.8rem)]
               leading-[0.94]
-              mb-8
+              mb-6
             "
           >
             Risks hidden
@@ -65,7 +72,7 @@ export default function RiskCategories() {
 
           <p
             className="
-              text-xl
+              text-[18px]
               leading-relaxed
               max-w-3xl
               text-[var(--color-ink-mid)]
@@ -78,7 +85,7 @@ export default function RiskCategories() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
           {risks.map((risk) => (
             <div
               key={risk.title}
@@ -88,23 +95,23 @@ export default function RiskCategories() {
                 border
                 border-[var(--color-rule)]
 
-                p-8
+                p-6
 
                 transition-all
                 duration-500
 
-                hover:-translate-y-2
+                hover:-translate-y-1.5
                 hover:border-[var(--color-rule-strong)]
               "
             >
-              <h3 className="display text-3xl mb-5">
+              <h3 className="display text-[1.65rem] mb-4">
                 {risk.title}
               </h3>
 
               <p
                 className="
-                  text-[15px]
-                  leading-7
+                  text-[14px]
+                  leading-6
                   text-[var(--color-ink-mid)]
                 "
               >

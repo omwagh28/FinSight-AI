@@ -6,20 +6,28 @@ import TryNowButton from "@/components/ui/TryNowButton";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-24 min-h-[92vh]">
+    <section className="relative overflow-hidden pt-25 pb-25 min-h-[92vh]">
       <AuroraBackground />
 
-      <div className="relative z-10 max-w-[1350px] mx-30">
-        <p className="label-wide mb-10">
+      <div
+        className="
+          relative
+          z-10
+          max-w-[1100px]
+          mx-auto
+          px-10
+        "
+      >
+        <p className="label-wide mb-6">
           agentic financial intelligence platform
         </p>
 
         <h1
           className="
             display
-            max-w-[1200px]
-            text-[clamp(4.5rem,8vw,7.5rem)]
-            leading-[0.9]
+            max-w-[1100px]
+            text-[clamp(3.7rem,7vw,5.5rem)]
+            leading-[10]
             tracking-[-0.045em]
             text-[var(--color-ink)]
           "
@@ -34,10 +42,10 @@ export default function Hero() {
 
         <p
           className="
-            mt-12
+            mt-10
             max-w-3xl
-            text-[1.45rem]
-            leading-[1.65]
+            text-[1.25rem]
+            leading-[1.6]
             text-[var(--color-ink-mid)]
           "
         >
@@ -50,7 +58,7 @@ export default function Hero() {
           decisions.
         </p>
 
-        <div className="mt-16 flex flex-col md:flex-row md:items-center gap-10">
+        <div className="mt-12 flex flex-col md:flex-row md:items-center gap-8">
           <TryNowButton />
 
           <Link
@@ -65,7 +73,7 @@ export default function Hero() {
           </Link>
         </div>
 
-        <div className="mt-20 flex flex-wrap gap-x-16 gap-y-8">
+        <div className="mt-16 flex flex-wrap gap-x-12 gap-y-6">
           <Stat
             value="24+"
             label="financial metrics"
@@ -103,7 +111,7 @@ function Stat({
       <span
         className="
           display
-          text-[3.8rem]
+          text-[3.2rem]
           leading-none
           text-[var(--color-ink)]
         "

@@ -52,7 +52,16 @@ const metrics = [
 export default function MetricsShowcase() {
   return (
     <section className="section">
-      <div className="container-xl">
+      <div 
+         className="
+          relative
+          z-10
+          max-w-[1100px]
+          mx-auto
+          px-8
+        "
+      >
+      
         <div className="section-divider" />
 
         <div className="flex items-center justify-between mb-10">
@@ -106,7 +115,7 @@ export default function MetricsShowcase() {
                 border
                 border-[var(--color-rule)]
 
-                p-12
+                p-10
 
                 transition-all
                 duration-500
@@ -119,7 +128,7 @@ export default function MetricsShowcase() {
               <div
                 className="
                   display
-                  text-5xl
+                  text-6xl
                   mb-5
 
                   transition-all

@@ -228,13 +228,13 @@ function TextInputCard({
         placeholder={`Paste ${title} report text here...`}
         className="
           w-full
-          min-h-[400px]
+          min-h-[260px]
           bg-transparent
-          p-8
+          p-5
           resize-none
           outline-none
-          text-lg
-          leading-8
+          text-[0.95rem]
+          leading-6
         "
       />
     </div>

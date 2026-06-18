@@ -22,8 +22,8 @@ export default function NavPill({
         items-center
         justify-center
 
-        px-8
-        py-5
+        px-4
+        py-4
 
         rounded-full
 
@@ -53,8 +53,8 @@ export default function NavPill({
           font-mono
           uppercase
 
-          text-[13px]
-          md:text-[14px]
+          text-[15px]
+          md:text-[10px]
 
           tracking-[0.18em]
 

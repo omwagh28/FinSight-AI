@@ -11,16 +11,16 @@ export default function Header({
   active,
 }: HeaderProps) {
   return (
-    <header className="relative z-10 px-8 md:px-8 lg:px-10 max-w-[1500px] mx-auto pt-10 flex items-center justify-between">
+    <header className="relative z-1 px-10 md:px-10 lg:px-10 max-w-[1100px] mx-auto pt-10 flex items-center justify-between">
       <Link
         href="/"
         className="flex items-baseline gap-1"
       >
-        <span className="display-italic text-3xl">
+        <span className="display-italic text-4xl">
           Fin
         </span>
 
-        <span className="display text-3xl">
+        <span className="display text-4xl">
           Sight
         </span>
       </Link>
@@ -33,7 +33,7 @@ export default function Header({
         px-5
         border
         border-[var(--rule)]
-        bg-[rgba(14,14,14,0.77)]
+        bg-[rgb(18,17,17)]
         backdrop-blur-md
         rounded-full
         shadow-[0_0_0_1px_rgba(255,255,255,.03)]

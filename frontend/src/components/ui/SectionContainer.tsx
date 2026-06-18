@@ -10,7 +10,7 @@ export default function SectionContainer({
   children,
 }: SectionContainerProps) {
   return (
-    <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
+    <div className="max-w-[1500px] mx-auto px-12 md:px-25 lg:px-50">
       {children}
     </div>
   );

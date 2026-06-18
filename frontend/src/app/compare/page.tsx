@@ -37,11 +37,11 @@ export default function ComparePage() {
             className="
               display
 
-              text-[clamp(3rem,7vw,6.5rem)]
+              text-[clamp(2rem,5vw,4.5rem)]
 
               leading-[0.9]
 
-              max-w-6xl
+              max-w-4xl
             "
           >
             Know which company

@@ -34,15 +34,19 @@ export default function HowItWorks() {
 
   return (
     <section className="section">
-      <div className="container-xl">
-
-        {/* Divider */}
+      <div 
+       className="
+          relative
+          z-10
+          max-w-[1100px]
+          mx-auto
+          px-8
+        "
+        >
 
         <div className="section-divider" />
 
-        {/* Labels */}
-
-        <div className="flex items-center justify-between mb-12">
+        <div className="flex items-center justify-between mb-10">
           <span className="label-wide">
             HOW IT WORKS
           </span>
@@ -52,16 +56,14 @@ export default function HowItWorks() {
           </span>
         </div>
 
-        {/* Heading */}
-
-        <div className="max-w-6xl mb-24">
+        <div className="max-w-2xl mb-10">
           <h2
             className="
               display
-              text-[clamp(3.5rem,6vw,6rem)]
+              text-[clamp(3rem,5vw,5rem)]
               leading-[0.92]
               tracking-[-0.04em]
-              mb-10
+              mb-8
             "
           >
             One report.
@@ -71,10 +73,10 @@ export default function HowItWorks() {
 
           <p
             className="
-              text-[22px]
+              text-[19px]
               leading-relaxed
               text-[var(--color-ink-mid)]
-              max-w-4xl
+              max-w-3xl
             "
           >
             FinSight transforms unstructured
@@ -84,14 +86,12 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        {/* Cards */}
-
         <div
           className="
             grid
-            md:grid-cols-2
-            xl:grid-cols-5
-            gap-6
+            md:grid-cols-3
+            xl:grid-cols-3
+            gap-7
           "
         >
           {steps.map((step) => (
@@ -101,7 +101,7 @@ export default function HowItWorks() {
                 group
                 relative
 
-                min-h-[340px]
+                min-h-[290px]
 
                 bg-[rgba(8,8,8,0.75)]
 
@@ -110,7 +110,7 @@ export default function HowItWorks() {
                 border
                 border-[rgba(255,255,255,0.06)]
 
-                p-10
+                p-8
 
                 overflow-hidden
 
@@ -118,7 +118,7 @@ export default function HowItWorks() {
                 duration-500
                 ease-out
 
-                hover:-translate-y-3
+                hover:-translate-y-2
                 hover:scale-[1.02]
 
                 hover:border-[rgba(200,109,70,0.35)]
@@ -126,8 +126,6 @@ export default function HowItWorks() {
                 hover:shadow-[0_30px_80px_rgba(0,0,0,0.60)]
               "
             >
-              {/* Accent Line */}
-
               <div
                 className="
                   absolute
@@ -146,8 +144,6 @@ export default function HowItWorks() {
                 "
               />
 
-              {/* Glow */}
-
               <div
                 className="
                   absolute
@@ -163,15 +159,13 @@ export default function HowItWorks() {
                 "
               />
 
-              {/* Content */}
-
               <div className="relative z-10 h-full flex flex-col">
                 <div
                   className="
                     text-[var(--color-accent)]
                     text-sm
                     italic
-                    mb-8
+                    mb-6
                   "
                 >
                   {step.number}
@@ -181,10 +175,10 @@ export default function HowItWorks() {
                   className="
                     display
 
-                    text-[42px]
+                    text-[36px]
                     leading-none
 
-                    mb-8
+                    mb-6
 
                     transition-all
                     duration-500
@@ -198,8 +192,8 @@ export default function HowItWorks() {
 
                 <p
                   className="
-                    text-[17px]
-                    leading-8
+                    text-[15px]
+                    leading-7
 
                     text-[var(--color-ink-mid)]
 
@@ -212,20 +206,18 @@ export default function HowItWorks() {
                   {step.description}
                 </p>
 
-                {/* Bottom Indicator */}
-
-                <div className="mt-auto pt-10">
+                <div className="mt-auto pt-8">
                   <div
                     className="
                       h-px
-                      w-10
+                      w-8
 
                       bg-[var(--color-rule)]
 
                       transition-all
                       duration-500
 
-                      group-hover:w-20
+                      group-hover:w-16
                       group-hover:bg-[var(--color-accent)]
                     "
                   />

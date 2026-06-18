@@ -173,7 +173,7 @@ export default function Analyzer() {
       : "completed";
 
   return (
-    <section className="mt-14 border-t border-[var(--color-rule)] pt-10">
+    <section className="mt-14 border-t border-[var(--color-rule)] pt-8">
       {/* Upload Section Always Visible */}
 
       <div
@@ -181,7 +181,7 @@ export default function Analyzer() {
           border
           border-[var(--color-rule)]
           rounded-[32px]
-          p-8
+          p-6
           bg-[var(--color-surface)]
         "
       >
@@ -229,12 +229,12 @@ export default function Analyzer() {
             placeholder="Paste annual report, earnings filing, investor presentation..."
             className="
               w-full
-              min-h-[320px]
+              min-h-[240px]
               bg-transparent
               border
               border-[var(--color-rule)]
               rounded-[24px]
-              p-6
+              p-4
               outline-none
               resize-none
             "
@@ -248,7 +248,7 @@ export default function Analyzer() {
               border-dashed
               border-[var(--color-rule)]
               rounded-[28px]
-              min-h-[320px]
+              min-h-[240px]
 
               flex
               flex-col

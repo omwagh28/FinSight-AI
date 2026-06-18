@@ -3,19 +3,32 @@
 export default function AuroraBackground() {
   return (
     <div
-      aria-hidden
-      className="absolute inset-0 overflow-hidden pointer-events-none"
-    >
+        aria-hidden
+        className="
+          absolute
+          inset-0
+
+          overflow-hidden
+          pointer-events-none
+
+          max-w-[1100px]
+          mx-auto
+
+          left-0
+          right-0
+        "
+      >
       <div
         className="
           absolute
-          top-[-200px]
-          left-[-150px]
-          h-[500px]
-          w-[500px]
+          inset-0
+          top-[-160px]
+          left-[-180px]
+          h-[380px]
+          w-[480px]
           rounded-full
-          blur-[120px]
-          opacity-20
+          blur-[100px]
+          opacity-10
           bg-orange-500
         "
       />
@@ -23,12 +36,12 @@ export default function AuroraBackground() {
       <div
         className="
           absolute
-          top-[50px]
-          right-[-200px]
-          h-[600px]
-          w-[600px]
+          top-[-160px]
+          right-[-250px]
+          h-[380px]
+          w-[450px]
           rounded-full
-          blur-[160px]
+          blur-[100px]
           opacity-10
           bg-red-500
         "
@@ -37,13 +50,14 @@ export default function AuroraBackground() {
       <div
         className="
           absolute
-          bottom-[-300px]
-          left-[25%]
-          h-[700px]
-          w-[700px]
+          bottom-[-220px]
+          left-[32%]
+          h-[500px]
+          w-[500px]
+
           rounded-full
-          blur-[180px]
-          opacity-[0.06]
+          blur-[140px]
+          opacity-[0.05]
           bg-yellow-500
         "
       />
