@@ -1,0 +1,51 @@
+# ======================
+# Python
+# ======================
+
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# ======================
+# Environment Variables
+# ======================
+
+.env
+.env.local
+.env.*
+
+# ======================
+# Backend Generated Data
+# ======================
+
+backend/uploads/
+backend/qdrant_data/
+
+# ======================
+# Frontend
+# ======================
+
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# ======================
+# IDE
+# ======================
+
+.vscode/
+.idea/
+
+# ======================
+# OS Files
+# ======================
+
+.DS_Store
+Thumbs.db
+
+# ======================
+# Logs
+# ======================
+
+*.log
