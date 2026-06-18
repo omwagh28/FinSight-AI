@@ -1,0 +1,477 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #080809;
+
+  --color-surface: #0e0e10;
+  --color-surface-2: #121215;
+  --color-surface-3: #17171b;
+
+  --color-ink: #ebe5d9;
+  --color-ink-mid: rgba(235, 229, 217, 0.68);
+  --color-ink-low: rgba(235, 229, 217, 0.42);
+  --color-ink-faint: rgba(235, 229, 217, 0.22);
+
+  --color-rule: rgba(235, 229, 217, 0.10);
+  --color-rule-strong: rgba(235, 229, 217, 0.20);
+
+  --color-accent: #d96a3a;
+  --color-accent-soft: rgba(217, 106, 58, 0.14);
+
+  --font-display: var(--font-instrument-serif), Georgia, serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+
+  --tracking-tight: -0.035em;
+  --tracking-body: -0.012em;
+  --tracking-label: 0.16em;
+  --tracking-label-wide: 0.20em;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+
+  font-family: var(--font-body);
+
+  letter-spacing: var(--tracking-body);
+
+  font-weight: 400;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ==========================================
+   MATTE GRAIN
+========================================== */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      rgba(235,229,217,.055) 1px,
+      transparent 1px
+    );
+
+  background-size: 5px 5px;
+
+  z-index: 0;
+
+  mix-blend-mode: screen;
+}
+
+/* ==========================================
+   GLOBAL AURORA
+========================================== */
+
+body::after {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 81% -10%,
+      rgba(255, 74, 31, 0.07),
+      transparent 55%
+    );
+
+  z-index: 0;
+}
+
+/* ==========================================
+   CONTENT LAYER
+========================================== */
+
+main,
+header,
+footer,
+section,
+article {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: .94;
+  letter-spacing: var(--tracking-tight);
+}
+
+.display-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  line-height: .94;
+  letter-spacing: var(--tracking-tight);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--color-ink-low);
+}
+
+.label-wide {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label-wide);
+  color: var(--color-ink-low);
+}
+
+/* ==========================================
+   DIVIDERS
+========================================== */
+
+.rule {
+  border-top: 1px solid var(--color-rule);
+}
+
+.section-divider {
+  position: relative;
+
+  width: 100%;
+  height: 1px;
+  margin-bottom: 6rem;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(235,229,217,.10),
+      transparent
+    );
+}
+
+.section-divider::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -20px 0;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(217,106,58,.06),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+/* ==========================================
+   CARDS
+========================================== */
+
+.panel {
+  background: rgba(14,14,16,.70);
+
+  backdrop-filter: blur(8px);
+
+  border: 1px solid var(--color-rule);
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease;
+}
+
+.panel:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--color-rule-strong);
+}
+
+/* ==========================================
+   PREMIUM CARD HOVER
+========================================== */
+
+.premium-card {
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    background .35s ease;
+}
+
+.premium-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(217,106,58,.08),
+      transparent 50%
+    );
+
+  transition: opacity .4s ease;
+}
+
+.premium-card:hover::before {
+  opacity: 1;
+}
+
+.premium-card:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--color-rule-strong);
+}
+
+/* ==========================================
+   LINKS
+========================================== */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==========================================
+   SELECTION
+========================================== */
+
+::selection {
+  background: var(--color-accent);
+  color: black;
+}
+
+/* ==========================================
+   FOCUS
+========================================== */
+
+:focus-visible {
+  outline: 1px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   REVEAL
+========================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+
+  transition:
+    opacity 800ms cubic-bezier(.16,1,.3,1),
+    transform 800ms cubic-bezier(.16,1,.3,1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   AURORA BLOCK
+========================================== */
+
+.aurora-bg {
+  position: absolute;
+
+  inset: -20% -10% auto -10%;
+
+  height: 90vh;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  filter: blur(160px);
+
+  opacity: .38;
+
+  background:
+    radial-gradient(
+      ellipse 55% 45% at 75% 20%,
+      rgba(217,106,58,.18),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 45% 60% at 30% 50%,
+      rgba(217,106,58,.08),
+      transparent 75%
+    );
+}
+
+/* ==========================================
+   PREMIUM CTA BUTTON
+========================================== */
+
+.try-now {
+  position: relative;
+
+  display: inline-flex;
+
+  padding: 5px;
+
+  border-radius: 9999px;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  cursor: pointer;
+
+  transition:
+    transform 500ms ease,
+    box-shadow 500ms ease;
+}
+
+.try-now:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 40px rgba(0,0,0,.35),
+    0 0 20px rgba(217,106,58,.08);
+}
+
+.try-now-border {
+  position: absolute;
+
+  inset: -250%;
+
+  z-index: 0;
+
+  background:
+    conic-gradient(
+      from 0deg,
+
+      transparent 0deg,
+      transparent 45deg,
+
+      rgba(255,255,255,.95) 70deg,
+      rgba(255,255,255,.10) 90deg,
+
+      transparent 120deg,
+      transparent 220deg,
+
+      rgba(217,106,58,1) 250deg,
+      rgba(217,106,58,.15) 280deg,
+
+      transparent 310deg,
+      transparent 360deg
+    );
+
+  animation: try-now-spin 6s linear infinite;
+}
+
+.try-now-inner {
+  position: relative;
+
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1.15rem 2.3rem;
+
+  border-radius: 9999px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(14,14,16,.98),
+      rgba(8,8,9,.98)
+    );
+
+  transition:
+    background 300ms ease,
+    transform 300ms ease;
+}
+
+.try-now:hover .try-now-inner {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(18,18,22,1),
+      rgba(10,10,12,1)
+    );
+}
+
+.try-now::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(217,106,58,.12),
+      transparent 70%
+    );
+
+  opacity: 0;
+
+  transition: opacity 400ms ease;
+}
+
+.try-now:hover::after {
+  opacity: 1;
+}
+
+@keyframes try-now-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .try-now-border {
+    animation: none;
+  }
+}
