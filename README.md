@@ -1,3 +1,5 @@
+
+
 # FinSight AI – Agentic Financial Intelligence Platform
 
 FinSight AI is an AI-powered financial intelligence platform that helps investors, analysts, and researchers understand complex financial documents through Retrieval-Augmented Generation (RAG), financial risk analysis, scorecard generation, and company comparison workflows.
@@ -20,6 +22,12 @@ Traditional manual analysis is:
 FinSight AI addresses this challenge by automatically extracting, retrieving, analyzing, and explaining financial information using AI-powered document intelligence.
 
 ---
+Demo Link :- 
+
+
+https://github.com/user-attachments/assets/c0b22312-8d84-4d73-88ad-c8997329e6d1
+
+
 
 ## Key Features
 
