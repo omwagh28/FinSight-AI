@@ -22,7 +22,7 @@ Traditional manual analysis is:
 FinSight AI addresses this challenge by automatically extracting, retrieving, analyzing, and explaining financial information using AI-powered document intelligence.
 
 ---
-Demo Link :- 
+Demo Video :-
 
 
 https://github.com/user-attachments/assets/c0b22312-8d84-4d73-88ad-c8997329e6d1
