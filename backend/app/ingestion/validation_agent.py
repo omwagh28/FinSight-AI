@@ -5,7 +5,7 @@ from app.ingestion.financial_density import (
 )
 
 
-MIN_FINANCIAL_SCORE = 3
+MIN_FINANCIAL_SCORE = 10
 
 
 async def validate_document(
