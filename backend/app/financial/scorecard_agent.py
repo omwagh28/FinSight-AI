@@ -9,7 +9,7 @@ async def generate_scorecard_from_evidence(
     evidence_chunks: list[str],
 ):
     evidence = "\n\n".join(
-        evidence_chunks[:30]
+        evidence_chunks[:15]
     )
 
     try:
@@ -22,6 +22,38 @@ You are a senior financial analyst.
 Use ONLY the evidence provided.
 
 Return ONLY valid JSON.
+
+FIRST VALIDATE THE EVIDENCE.
+
+A valid financial document should contain actual company financial information such as:
+
+- Revenue
+- Net Income
+- Profit / Loss
+- Cash Flow
+- Assets
+- Liabilities
+- Debt
+- Margins
+- Growth Metrics
+- Financial Statements
+
+Documents such as:
+
+- Resumes
+- Job Descriptions
+- Research Papers
+- Legal Contracts
+- Product Documentation
+
+must NOT be treated as financial reports even if they contain finance-related terms.
+
+If the evidence does not contain enough company financial information to generate a financial scorecard, return EXACTLY:
+
+{{
+  "success": false,
+  "message": "This document is not a financial report."
+}}
 
 IMPORTANT:
 
@@ -138,32 +170,26 @@ EVIDENCE:
 
     try:
 
-        return json.loads(
+        result = json.loads(
             cleaned
         )
 
+        if (
+            isinstance(result, dict)
+            and result.get("success") is False
+        ):
+            return result
+
+        return result
+
     except Exception as e:
+
         print(
             f"SCORECARD PARSE ERROR: {e}"
         )
 
         return {
-            "verdict":
-            "Unable to generate scorecard.",
-
-            "findings": [],
-
-            "metrics": [],
-
-            "risks": [],
-
-            "assessment": {
-                "liquidity": "moderate",
-                "leverage": "moderate",
-                "profitability": "moderate",
-                "efficiency": "moderate",
-                "growth": "moderate",
-            },
-
-            "healthScore": 0,
+            "success": False,
+            "message":
+            "Unable to generate scorecard."
         }
